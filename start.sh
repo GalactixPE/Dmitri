@@ -1,5 +1,5 @@
 #!/bin/bash
-iptables -A INPUT -i lo -j ACCEPT
+iptables -I DOCKER -p udp --dport 19132 -j REJECT
 
 ipset -N nl hash:net
 ipset -N be hash:net
